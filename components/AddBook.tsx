@@ -23,7 +23,7 @@ export const AddBook = ({ onBookAdd, publishers, genres }: AddBookProps) => {
   return (
     <div>
       <Button onClick={() => setIsModalOpen(true)}>Add Book</Button>
-      <Modal open={isModalOpen} onOpenChange={setIsModalOpen}>
+      <Modal open={isModalOpen} onOpenChange={setIsModalOpen} title="Add a New Book">
         <BookForm onFormSubmit={handleFormSubmit} onCancel={() => setIsModalOpen(false)} publishers={publishers} genres={genres} />
       </Modal>
     </div>

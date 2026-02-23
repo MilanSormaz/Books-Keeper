@@ -3,7 +3,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { twMerge } from 'tailwind-merge';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: 'primary' | 'secondary';
+  variant?: 'primary' | 'secondary' | 'success';
   asChild?: boolean;
 }
 
@@ -16,6 +16,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>((
   const variantClasses = {
     primary: 'bg-[#5A5A40] text-white hover:bg-[#4A4A30] focus:ring-[#5A5A40]',
     secondary: 'bg-transparent border border-[#5A5A40] text-[#5A5A40] hover:bg-[#5A5A40] hover:text-white focus:ring-[#5A5A40]',
+    success: 'bg-emerald-600 text-white hover:bg-emerald-700 focus:ring-emerald-500',
   };
 
     const Comp = asChild ? Slot : 'button';

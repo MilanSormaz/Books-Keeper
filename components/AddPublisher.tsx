@@ -26,7 +26,7 @@ export const AddPublisher = ({ onPublisherAdd, publishers }: AddPublisherProps) 
         <Plus className="-ml-1 mr-2 h-5 w-5" />
         Manage Publishers
       </Button>
-      <Modal open={isModalOpen} onOpenChange={setIsModalOpen}>
+      <Modal open={isModalOpen} onOpenChange={setIsModalOpen} title="Manage Publishers">
         <PublisherManager onPublisherAdd={handlePublisherAdd} publishers={publishers} />
       </Modal>
     </>

@@ -155,7 +155,7 @@ export default function DashboardPage() {
           </div>
         </Container>
         {editingBook && (
-          <Modal open={!!editingBook} onOpenChange={() => setEditingBook(null)}>
+          <Modal open={!!editingBook} onOpenChange={() => setEditingBook(null)} title="Edit Book">
             <BookForm
               onFormSubmit={handleBookUpdate}
               onCancel={() => setEditingBook(null)}

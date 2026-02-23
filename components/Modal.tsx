@@ -7,10 +7,11 @@ import { X } from 'lucide-react';
 interface ModalProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
+  title: string;
   children: React.ReactNode;
 }
 
-export const Modal = ({ open, onOpenChange, children }: ModalProps) => {
+export const Modal = ({ open, onOpenChange, title, children }: ModalProps) => {
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
@@ -30,6 +31,7 @@ export const Modal = ({ open, onOpenChange, children }: ModalProps) => {
             transition={{ duration: 0.3 }}
             className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-3xl shadow-lg p-8 w-[90vw] max-w-lg z-50"
           >
+            <Dialog.Title className="text-xl font-bold mb-4 text-gray-800">{title}</Dialog.Title>
             {children}
             <Dialog.Close asChild>
               <button className="absolute top-4 right-4 text-gray-400 hover:text-gray-600">

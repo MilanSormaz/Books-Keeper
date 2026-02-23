@@ -1,0 +1,5 @@
+{
+  "name": "Books Keeper",
+  "description": "An application for storing and managing your book collection.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,30 @@
+datasource db {
+  provider = "sqlite"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Publisher {
+  id    String  @id @default(uuid())
+  name  String  @unique
+  books Book[]
+}
+
+model Genre {
+  id    String  @id @default(uuid())
+  name  String  @unique
+  books Book[]
+}
+
+model Book {
+  id          String    @id @default(uuid())
+  title       String
+  author      String
+  status      String
+  publisher   Publisher @relation(fields: [publisherId], references: [id])
+  publisherId String
+  genre       Genre     @relation(fields: [genreId], references: [id])
+  genreId     String
+}
